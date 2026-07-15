@@ -82,20 +82,33 @@ Unicode: 문자에 고유 번호를 부여하는 표준 (바이트 크기는 인
 UTF-8: 1~4byte 가변 (영어 1byte, 한글 대부분 3byte)
 
 <h1> .... <h6> 큰제목 글자. 글씨크기 크게, 굵게 
+
 <br> 줄바꿈
 
 종료 태그 없이 혼자쓰는 태그 
 - 원래는 <br /> 같이 썼었음
-Block Tag : 문단 (항상 새 줄에서 시작하고, 한 줄 전체를 씀) <div>,<p>,<h1>
+Block Tag : 한 줄 전체를 차지 <div>,<p>,<h1>
 Inline Tag : 문장 속 단어 (그 자리에서 옆으로 이어서 흐름) <span>
 
+앵커태그(a태그) : 링크를 만드는 태그 
+href="https://www.naver.com" #링크걸어주기
+target="_blank"              #새탭에서 열기
 
+글자 모양 태그 
+<b> 굵게 = <strong> , <i> 기울임체 = <em> , <small> 작은글자, <sup> 윗첨자 
 
+목록태그 : <ul> 그냥 동그라미 태그  <ol> 순서태그 
+          내용은 <li> 
 
+표 태그 : <table> (표삽입), <tr> 행, <td> 열, <th> 표 제목(굵고 가운데정렬)
+          옵션 colspan 열합치기, rowspan 행합치기
 
+이미지태그 : <img> 
 
+음악태그 : <audio>  /옵션 controls 재생바나옴 
 
-
+시맨틱태그 : 의미를 담은 이름달린 태그 , 주로 웹사이트 공간 분리용, HTML 5이후 나옴 
+            <header, <nav>, <main>, <article>, <section>, <time>, <aside> 
 
 
 
