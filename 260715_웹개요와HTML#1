@@ -1,33 +1,58 @@
-# Client-Server 통신 기본 개념 정리
-## 1. Request & Response
+Client-Server 통신 기본 개념 정리
 
-Client가 Server에 접속할 때 **Request**를 보내면, Server는 구조화된 내용(`index.html` 등)을 **Response**로 응답한다.
 
-> 예) 고객이 '잔액조회' 버튼을 누르면(Request) → Server가 홍00의 잔액을 조회해서 다시 응답(Response)한다.
+1. Request & Response
+Client가 Server에 접속할 때 Request를 보내면, Server는 구조화된 내용(index.html 등)을 Response로 응답한다.
+예) 고객이 '잔액조회' 버튼을 누르면(Request) → Server가 홍00의 잔액을 조회해서 다시 응답(Response)한다.
 
-## 2. BackEnd (SSR) vs FrontEnd (CSR)
 
-| 구분 | 설명 |
-|---|---|
-| **BackEnd (SSR, Server-Side Rendering)** | 응답 결과를 서버에서 만든다. C#, C, Java 등의 코드를 해석·실행할 수 있는 환경(런타임)이 서버에 있다. |
-| **FrontEnd (CSR, Client-Side Rendering)** | 화면에 보이는 것을 클라이언트(브라우저)에서 만든다. HTML, CSS(문법 체계), JavaScript를 해석할 수 있는 환경이 웹브라우저에 있다. |
+2. BackEnd (SSR) vs FrontEnd (CSR)
 
-- **Angular**는 프레임워크, **React**는 라이브러리로 구분된다.
+BackEnd (SSR, Server-Side Rendering)
+응답 결과를 서버에서 만든다. C#, C, Java 등의 코드를 해석·실행할 수 있는 환경(런타임)이 서버에 있다.
 
-## 3. 웹앱(Web App)
+FrontEnd (CSR, Client-Side Rendering)
+화면에 보이는 것을 클라이언트(브라우저)에서 만든다. HTML, CSS(문법 체계), JavaScript를 해석할 수 있는 환경이 웹브라우저에 있다.
 
-- 웹브라우저로 동작하는 서비스를 앱 형태로 감싸서 만든 것 → **웹앱**
-- 굳이 앱으로 만드는 가장 큰 이유 중 하나는 **푸시 알람(Push Notification)** 기능 때문 (브라우저만으로는 구현/전달에 한계가 있음)
+Angular는 프레임워크/ React는 라이브러리
 
-## 4. URL 구조
 
-```
+3. 웹앱(Web App)
+
+웹브라우저로 동작하는 서비스를 앱 형태로 감싸서 만든 것이 웹앱이다.
+굳이 앱으로 만드는 가장 큰 이유 중 하나는 푸시 알람(Push Notification) 기능 때문이다. 브라우저만으로는 구현이나 전달에 한계가 있다.
+
+
+4. URL 구조
+
 프로토콜://도메인:포트/경로
-```
 
-- **HTTP**: 웹상에서 통신할 때 사용하는 프로토콜
-- **FTP** (File Transfer Protocol): 주고받는 대상이 **파일**
-- **SMTP** (Simple Mail Transfer Protocol): 주고받는 대상이 **이메일**
+HTTP: 웹상에서 통신할 때 사용하는 프로토콜
+FTP (File Transfer Protocol): 주고받는 대상이 파일
+SMTP (Simple Mail Transfer Protocol): 주고받는 대상이 이메일
 -----------------------------------------------------------------------------------------------
 
 IP대신 도메인을 쓰는 이유 : 분산하기 위해 / 기억하기 쉽게 하기 위해 
+port 를 사용하는 이유 : 하나의 서버에서 여러 서비스를 동시에 운영하기 위해서
+
+
+5. 웹표준
+HTML 구조와 내용(뼈대) - 정적문서
+CSS 디자인(색상,크기,배치) - 정적문서
+JavaScript 동작(움직임) - 동적문서
+
+웹크롤링을 하려면 HTML, CSS 구조를 알아야함. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
