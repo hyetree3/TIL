@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/cat.jpg">
+    <title>테스트 페이지</title>
+    
+    <style>
+        /* =================================================== */
+        /* [1] 기본 스타일 (PC/컴퓨터 화면 기준)                  */
+        /* =================================================== */
+        body {
+            background-color: #f0f2f5; 
+            color: #333333;            
+            font-family: sans-serif;   
+            text-align: center;        
+            margin: 0;                 
+            padding: 40px 20px; /* 모바일 좌우 여백을 위해 20px로 살짝 조절 */
+        }
+
+        h1 {
+            color: #2c3e50;            
+            font-size: 32px;           
+            margin-bottom: 10px;       
+        }
+
+        h2 {
+            color: #7f8c8d;            
+            font-size: 20px;           
+            margin-top: 10px;          
+        }
+
+        hr {
+            width: 60%;                
+            border: 1px solid #dcdde1; 
+            margin-top: 20px;          
+            margin-bottom: 20px;       
+        }
+
+        /* 고양이 이미지 기본 크기 */
+        img {
+            width: 200px; /* 모바일 호환을 위해 고정 크기로 바꾸고 둥글게 처리했습니다 */
+            height: 200px;
+            object-fit: cover; /* 이미지가 찌그러지지 않게 방지 */
+            border: 5px solid white;   
+            border-radius: 50%; /* 동그란 프로필 사진 모양으로 변경 */
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
+            margin-bottom: 30px;       
+        }
+
+        /* 유튜브와 PDF(iframe) 공통 스타일 */
+        iframe {
+            display: block;            
+            margin: 0 auto 30px auto;  
+            border: 3px solid #6c5ce7; 
+            border-radius: 10px;       
+            max-width: 100%; /* 중요: 화면보다 iframe이 커서 삐져나가는 것을 막아줍니다 */
+        }
+
+        /* PDF 뷰어 크기 (PC 버전) */
+        .pdf-size {
+            width: 60%;     
+            height: 500px;  
+        }
+
+
+        /* =================================================== */
+        /* [2] 반응형 스타일 (화면 크기가 768px 이하인 모바일/태블릿) */
+        /* =================================================== */
+        @media (max-width: 768px) {
+            
+            /* 모바일에서는 여백을 조금 줄여서 화면을 넓게 씁니다 */
+            body {
+                padding: 20px 10px;
+            }
+
+            /* 모바일 화면에 맞춰 글자 크기를 살짝 줄입니다 */
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 16px;
+            }
+
+            /* 구분선 길이를 스마트폰 화면에 맞게 늘려줍니다 */
+            hr {
+                width: 85%;
+            }
+
+            /* 고양이 이미지 크기를 스마트폰에 맞게 살짝 축소 */
+            img {
+                width: 150px;
+                height: 150px;
+            }
+
+            /* 유튜브 동영상 크기를 모바일 화면 꽉 차게 조절 (560px -> 90%) */
+            .youtube-video {
+                width: 90% !important;  /* !important는 이 설정을 우선 적용하라는 뜻입니다 */
+                height: 200px;          /* 가로가 줄어들었으니 세로도 적당히 줄여줍니다 */
+            }
+
+            /* PDF 뷰어 크기를 모바일 화면 꽉 차게 조절 (60% -> 90%) */
+            .pdf-size {
+                width: 90%;
+                height: 400px;          /* 스마트폰 화면에 맞게 높이 축소 */
+            }
+        }
+    </style>
+    
+</head>
+<body>
+
+   <h1> 송혜림이 만든 HTML페이지 </h1>
+   <hr />
+   <h2> 환영합니다 </h2>
+   <hr />
+   
+   <a href="https://www.naver.com" target="_blank"> 
+    <img src="./images/cat.jpg" alt="냐옹" title="고양이"> 
+   </a>
+
+   <div> 
+    <audio src="./media/moonlight.mp3" autoplay controls style="margin-bottom: 30px; max-width: 100%;">
+    </audio>
+   </div>
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/cltr2QpFEvY?si=vbFh4Ps80FbzeZGi" class="youtube-video" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   
+   <iframe src="./media/01_AI_리터러시이해.pdf" class="pdf-size"></iframe>
+
+</body>
+</html>
