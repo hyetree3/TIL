@@ -2,132 +2,263 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <!-- 모바일 기기에서도 화면 비율이 깨지지 않게 맞춰주는 반응형 필수 메타 태그 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./cat.jpg">
-    <title>테스트 페이지</title>
+    <title>송혜림</title>
     
+    <!-- 구글 감자꽃(Gamja Flower) 폰트 링크 삽입 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+
     <style>
-        /* =================================================== */
-        /* [1] 기본 스타일 (PC/컴퓨터 화면 기준)                  */
-        /* =================================================== */
+        /* [1] 기본 웹페이지 스타일 설정 */
         body {
-            background-color: #f0f2f5; 
-            color: #333333;            
-            font-family: sans-serif;   
-            text-align: center;        
-            margin: 0;                 
-            padding: 40px 20px; /* 모바일 좌우 여백을 위해 20px로 살짝 조절 */
+            background-color: #ede7f6; /* 연한 보라색 계열 배경 */
+            color: #4a3f5a;            /* 텍스트 읽기 편한 진한 회보라색 */
+            font-family: 'Gamja Flower', sans-serif; /* 감자꽃 폰트 전체 적용 */
+            margin: 0;                 /* 브라우저 기본 바깥 여백 제거 */
+            padding: 0;                /* 안쪽 여백 제거 */
+            display: flex;             /* 요소들을 정렬하기 위해 flexbox 사용 */
+            flex-direction: column;    /* 요소들을 세로로 차례대로 쌓음 */
+            align-items: center;       /* 가로 축 기준 가운데 정렬 */
         }
 
-        h1 {
-            color: #2c3e50;            
-            font-size: 32px;           
-            margin-bottom: 10px;       
+        /* [2] 헤더 영역 스타일 */
+        header {
+            background-color: #ffffff; /* 깔끔한 흰색 배경 */
+            width: 100%;               /* 좌우 꽉 차게 설정 */
+            padding: 20px;             /* 안쪽 여백 */
+            box-sizing: border-box;    /* 패딩이 포함된 크기 계산 방식을 안전하게 통일 */
+            display: flex;             /* 내부 요소를 배치하기 위해 flexbox 적용 */
+            flex-direction: column;    /* 위에서 아래로 세로 배치 */
+            align-items: center;       /* 가로 기준 가운데 정렬 */
+            position: sticky;          /* 스크롤을 내려도 화면 상단에 달라붙게 만듦 */
+            top: 0;                    /* 맨 위에 딱 붙어 있도록 위치 고정 */
+            z-index: 100;              /* 다른 요소들 위에 항상 보이도록 설정 */
+            box-shadow: 0 4px 10px rgba(103, 58, 183, 0.1); /* 연한 보라색 그림자 효과 */
         }
 
-        h2 {
-            color: #7f8c8d;            
-            font-size: 20px;           
-            margin-top: 10px;          
+        /* 헤더 안의 링크 영역 */
+        .profile-link {
+            text-decoration: none;     /* 링크 밑줄 제거 */
+            display: inline-block;     /* 크기 지정을 위해 인라인 블록으로 설정 */
         }
 
-        hr {
-            width: 60%;                
-            border: 1px solid #dcdde1; 
-            margin-top: 20px;          
-            margin-bottom: 20px;       
+        /* 원형 프로필 고양이 이미지 */
+        .profile-img {
+            width: 130px;              /* 가로 크기 130픽셀 */
+            height: 130px;             /* 세로 크기 130픽셀 */
+            border-radius: 50%;        /* 완벽한 원형으로 만들기 */
+            object-fit: cover;         /* 이미지 왜곡 없이 둥근 영역에 맞춤 */
+            border: 4px solid #d1c4e9; /* 연한 보라색 테두리 추가 */
+            transition: transform 0.3s ease, border-color 0.3s ease; /* 호버 애니메이션 효과 속도 설정 */
+            cursor: pointer;           /* 마우스를 대면 클릭하는 손 모양으로 전환 */
+            max-width: 100%;           /* 화면 밖으로 튀어나가지 않게 제한 */
         }
 
-        /* 고양이 이미지 기본 크기 */
-        img {
-            width: 200px; /* 모바일 호환을 위해 고정 크기로 바꾸고 둥글게 처리했습니다 */
-            height: 200px;
-            object-fit: cover; /* 이미지가 찌그러지지 않게 방지 */
-            border: 5px solid white;   
-            border-radius: 50%; /* 동그란 프로필 사진 모양으로 변경 */
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
-            margin-bottom: 30px;       
+        /* [호버 효과] 프로필 이미지에 마우스를 올렸을 때 */
+        .profile-img:hover {
+            transform: scale(1.1) rotate(5deg); /* 크기가 1.1배 커지고 오른쪽으로 5도 회전 */
+            border-color: #9575cd;              /* 테두리 선이 조금 더 진한 보라색으로 변경 */
         }
 
-        /* 유튜브와 PDF(iframe) 공통 스타일 */
-        iframe {
-            display: block;            
-            margin: 0 auto 30px auto;  
-            border: 3px solid #6c5ce7; 
-            border-radius: 10px;       
-            max-width: 100%; /* 중요: 화면보다 iframe이 커서 삐져나가는 것을 막아줍니다 */
+        /* 헤더 이동 메뉴 네비게이션 */
+        .nav-menu {
+            display: flex;             /* 메뉴 글자들을 가로로 나열 */
+            gap: 30px;                 /* 글자 메뉴 사이의 간격 */
+            margin-top: 15px;          /* 위쪽 프로필과 띄우기 위한 여백 */
         }
 
-        /* PDF 뷰어 크기 (PC 버전) */
-        .pdf-size {
-            width: 60%;     
-            height: 500px;  
+        /* 메뉴 글자들의 링크 스타일 */
+        .nav-menu a {
+            text-decoration: none;     /* 밑줄 제거 */
+            color: #7e57c2;            /* 기본 연보라색 글씨 */
+            font-size: 22px;           /* 글씨 크기 설정 */
+            font-weight: bold;         /* 두껍게 */
+            transition: color 0.2s ease; /* 마우스 올렸을 때 색 변화를 부드럽게 함 */
         }
 
+        /* 메뉴 글자에 마우스를 올렸을 때 */
+        .nav-menu a:hover {
+            color: #512da8;            /* 더 짙고 선명한 보라색으로 변함 */
+        }
 
-        /* =================================================== */
-        /* [2] 반응형 스타일 (화면 크기가 768px 이하인 모바일/태블릿) */
-        /* =================================================== */
+        /* [3] 본문 컨테이너 박스 */
+        .container {
+            width: 90%;                /* 기본적으로 화면 너비의 90% 사용 */
+            max-width: 750px;          /* 모니터가 아무리 커져도 최대 가로폭 750픽셀로 고정 */
+            margin: 40px 0;            /* 위아래 바깥 여백 40픽셀 */
+            display: flex;             /* 내부 카드들을 정렬하기 위해 사용 */
+            flex-direction: column;    /* 카드들을 아래로 차례로 쌓음 */
+            gap: 30px;                 /* 카드들 간의 수직 간격 */
+        }
+
+        /* 섹션 카드 기본 공통 스타일 */
+        .section-card {
+            background-color: #ffffff; /* 배경 흰색 */
+            padding: 30px;             /* 카드 내부 사방 여백 30픽셀 */
+            border-radius: 20px;       /* 모서리를 둥글둥글하게 깎음 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 은은한 밑바닥 그림자 */
+            border-left: 6px solid #b39ddb; /* 카드 왼쪽에만 포인트 세로선 배치 */
+            scroll-margin-top: 280px;  /* 메뉴 클릭 이동 시 헤더에 가려지지 않게 정지 위치 설정 */
+        }
+
+        /* 카드 안의 핵심 대제목 */
+        .section-card h2 {
+            font-size: 28px;           /* 제목 크기 */
+            color: #673ab7;            /* 보라색 강조 */
+            margin-top: 0;             /* 기본 위 여백 제거 */
+            margin-bottom: 15px;       /* 본문 글과의 여백 */
+            border-bottom: 2px dashed #ede7f6; /* 제목 하단에 아기자기한 점선 추가 */
+            padding-bottom: 10px;      /* 점선과 글씨 사이 간격 */
+        }
+
+        /* 카드 안의 일반 본문 */
+        .section-card p {
+            font-size: 22px;           /* 본문 글꼴 크기 */
+            line-height: 1.7;          /* 줄간격을 넓혀 읽기 편하게 만듦 */
+            margin: 0;                 /* 기본 바깥 여백 제거 */
+        }
+
+        /* [4] 취미 카드 정렬 (텍스트와 고양이를 가로로 나열) */
+        .hobby-card {
+            display: flex;             /* 가로로 나란히 배치하기 위해 지정 */
+            align-items: center;       /* 세로 가운데 정렬 */
+            justify-content: space-between; /* 양 끝으로 공간 배분 */
+            gap: 20px;                 /* 텍스트와 이미지 사이의 간격 */
+        }
+
+        /* 취미 글씨 구역 */
+        .hobby-text {
+            flex: 1;                   /* 남는 여백 전체를 텍스트 영역이 크게 차지하도록 설정 */
+        }
+
+        /* 취미 이미지 구역 */
+        .hobby-image {
+            flex-shrink: 0;            /* 화면 크기가 줄어들어도 이미지가 강제로 찌그러지지 않게 방지 */
+        }
+
+        /* 취미 박스 안의 주사위 든 고양이 캐릭터 */
+        .character-img {
+            width: 160px;              /* 가로 크기 160픽셀 */
+            height: 160px;             /* 세로 크기 160픽셀 */
+            border-radius: 15px;       /* 모서리를 예쁘게 깎음 */
+            object-fit: cover;         /* 정비율로 이미지 표현 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 캐릭터 밑 가벼운 그림자 */
+            max-width: 100%;           /* 화면 크기를 벗어나 삐져나가는 것 차단 */
+        }
+        /* 숏폼 비디오 전용 반응형 스타일 */
+        .shorts-video {
+            display: block;            /* 한 줄을 혼자 차지하게 설정 */
+            margin: 20px 0 0 0;  /* 가로 가운데 정렬 */
+            width: 225px;              /* 가로 길이를 세로형 화면에 맞춰 아담하게 설정 */
+            height: 400px;             /* 세로 길이를 길게 주어 9:16 비율 확보 */
+            border: 3px solid #b39ddb; /* 아기자기한 연보라색 테두리 */
+            border-radius: 15px;       /* 모서리를 둥글게 */
+            max-width: 100%;           /* 화면 크기보다 비디오가 커지는 것 방지 */
+        }
+
+    
+        
+        /* [5] 반응형 미디어 쿼리 (스마트폰 크기 768px 이하 대응) */
         @media (max-width: 768px) {
-            
-            /* 모바일에서는 여백을 조금 줄여서 화면을 넓게 씁니다 */
-            body {
-                padding: 20px 10px;
+            header {
+                padding: 15px 10px;    /* 모바일에서는 헤더 높이 축소 */
+            }
+            .profile-img {
+                width: 100px;          /* 프로필 사진을 모바일에 맞추어 아담하게 축소 */
+                height: 100px;
+            }
+            .nav-menu a {
+                font-size: 18px;       /* 메뉴 글자 크기 축소 */
+                gap: 15px;             /* 메뉴 글자들끼리의 간격 좁힘 */
+            }
+            .section-card {
+                padding: 20px;         /* 카드의 여백을 살짝 축소해서 공간 확보 */
+            }
+            .section-card h2 {
+                font-size: 24px;       /* 모바일 맞춤 제목 크기 */
+            }
+            .section-card p {
+                font-size: 18px;       /* 모바일 맞춤 본문 글꼴 크기 */
             }
 
-            /* 모바일 화면에 맞춰 글자 크기를 살짝 줄입니다 */
-            h1 {
-                font-size: 24px;
+            /* 취미 섹션 레이아웃 변경 (가로 정렬 -> 세로로 정렬되게 전환) */
+            .hobby-card {
+                flex-direction: column; /* 세로로 순서대로 쌓이게 바꿈 */
+                text-align: center;     /* 글자를 모바일 화면 기준 가운데로 정렬 */
             }
-            h2 {
-                font-size: 16px;
+            .character-img {
+                width: 140px;          /* 모바일에 맞추어 캐릭터 이미지 약간 축소 */
+                height: 140px;
+                margin-top: 15px;      /* 위 텍스트 영역과의 간격 확보 */
             }
-
-            /* 구분선 길이를 스마트폰 화면에 맞게 늘려줍니다 */
-            hr {
-                width: 85%;
-            }
-
-            /* 고양이 이미지 크기를 스마트폰에 맞게 살짝 축소 */
-            img {
-                width: 150px;
-                height: 150px;
-            }
-
-            /* 유튜브 동영상 크기를 모바일 화면 꽉 차게 조절 (560px -> 90%) */
-            .youtube-video {
-                width: 90% !important;  /* !important는 이 설정을 우선 적용하라는 뜻입니다 */
-                height: 200px;          /* 가로가 줄어들었으니 세로도 적당히 줄여줍니다 */
-            }
-
-            /* PDF 뷰어 크기를 모바일 화면 꽉 차게 조절 (60% -> 90%) */
-            .pdf-size {
-                width: 90%;
-                height: 400px;          /* 스마트폰 화면에 맞게 높이 축소 */
+            .shorts-video {
+                width: 280px;          /* 모바일 기기 화면 폭에 맞춰 가로를 살짝 축소 */
+                height: 500px;         /* 비율이 깨지지 않게 세로도 함께 축소 */
             }
         }
     </style>
-    
 </head>
 <body>
 
-   <h1> 송혜림이 만든 HTML페이지 </h1>
-   <hr />
-   <h2> 환영합니다 </h2>
-   <hr />
-   
-   <a href="https://www.naver.com" target="_blank"> 
-    <img src="./cat.jpg" alt="냐옹" title="고양이"> 
-   </a>
+    <!-- 헤더 영역 -->
+    <header>
+        <!-- 고양이 프로필 사진 (클릭 시 지정된 주소로 이동하는 a태그 감쌈) -->
+        <a href="https://hyetree3.github.io/TIL/" class="profile-link" target="_blank">
+            <img src="./images/cat.jpg" alt="고양이 프로필" class="profile-img">
+        </a>
+        
+        <!-- 네비게이션 메뉴 (누르면 각 id 위치로 부드럽게 스크롤링) -->
+        <nav class="nav-menu">
+            <a href="#about">자기소개</a>
+            <a href="#hobby">취미</a>
+            <a href="#goal">포부</a>
+        </nav>
+    </header>
 
-   <div> 
-    <audio src="./media/moonlight.mp3" autoplay controls style="margin-bottom: 30px; max-width: 100%;">
-    </audio>
-   </div>
+    <!-- 본문 내용 감싸는 상자 -->
+    <div class="container">
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/cltr2QpFEvY?si=vbFh4Ps80FbzeZGi" class="youtube-video" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-   
-   <iframe src="./media/01_AI_리터러시이해.pdf" class="pdf-size"></iframe>
+        <!-- [1] 자기소개 섹션 -->
+        <section id="about" class="section-card">
+            <h2>✨ 안녕하세요, 송혜림입니다!</h2>
+            <p>별명은 염소 🐐</p>
+            <iframe class="shorts-video" src="https://www.youtube.com/embed/OhwvPADUWyQ?autoplay=1&mute=1" title="#염소 " frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <!-- [2] 취미 섹션 -->
+        <section id="hobby" class="section-card hobby-card">
+            <!-- 텍스트 영역 -->
+            <div class="hobby-text">
+                <h2>🐾 보드게임</h2>
+                <p><strong>보드게임 덕후</strong></p>
+                <p>
+                    아날로그 세계로 초대합니다 <br>
+                    뉴비는 언제나 환영합니다! <br>
+                    
+                </p>
+            </div>
+            <!-- 캐릭터 이미지 영역 -->
+            <div class="hobby-image">
+                <img src="./images/cat_dice.jpg" alt="주사위 고양이" class="character-img">
+            </div>
+        </section>
+
+        <!-- [3] 포부 섹션 -->
+        <section id="goal" class="section-card">
+            <h2>🚀 포부</h2>
+            <p>
+                앞으로의 목표는 <br>
+                <strong>AI엔지니어로 성장하고</strong> <br>
+                취업하여 돈을 버는 것입니다. <br>
+                끊임없이 바뀌는 IT 세상 <br>
+                .... 화이팅 <br>
+            </p>
+        </section>
+
+    </div>
 
 </body>
 </html>
