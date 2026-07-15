@@ -1,0 +1,44 @@
+TIL - Prompt/Context/Harness 엔지니어링과 클라우드 기초
+
+
+1. Prompt, Context, Harness 엔지니어링
+
+Prompt 엔지니어링은 단일 메세지 단위의 엔지니어링이다.
+Context 엔지니어링은 세션 단위의 엔지니어링이다.
+Harness 엔지니어링은 모델이 동작하는 방식, 즉 모델의 실행 환경과 루프 자체를 다루는 엔지니어링이다.
+
+
+2. 클라우드
+
+저 구름 너머 어딘가에 서버가 있다는 의미로, 남의 컴퓨터를 인터넷을 통해 빌려 쓰는 것이다. 웹브라우저나 http, https를 통해 접근한다.
+
+클라우드 서비스 유형
+SaaS(Software as a Service)
+PaaS(Platform as a Service)
+IaaS(Infrastructure as a Service)
+iPaaS(Integration PaaS)
+FaaS(Function as a Service)
+DBaaS(Database as a Service)
+
+주요 키워드
+On Demand
+Pay per use
+Scalability(Auto Scale)
+Self-service
+Multi-tenancy
+
+Scale Out(수평 확장)
+같은 서버를 여러 대로 늘린다. 계산대를 1개에서 10개로 늘리는 것과 같다.
+
+Scale Up(수직 확장)
+서버 한 대를 더 좋은 사양으로 바꾼다. 램을 8GB에서 32GB로 늘리는 것과 같다. 다만 언젠가 한계가 있다.
+
+
+3. 클라우드 3사 서비스 비교 (AWS / Azure / GCP)
+
+서버: EC2 / Virtual Machines / Compute Engine
+스토리지: S3 / Blob Storage / Cloud Storage
+DB: RDS, DynamoDB / SQL Database, Cosmos DB / Cloud SQL, Firestore
+서버리스(코드만 올려서 실행): Lambda / Azure Functions / Cloud Functions
+AI, 머신러닝: SageMaker, Bedrock / Azure AI, Azure OpenAI / Vertex AI, Gemini API
+데이터 분석: Redshift / Synapse / BigQuery
