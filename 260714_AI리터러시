@@ -42,3 +42,16 @@ DB: RDS, DynamoDB / SQL Database, Cosmos DB / Cloud SQL, Firestore
 서버리스(코드만 올려서 실행): Lambda / Azure Functions / Cloud Functions
 AI, 머신러닝: SageMaker, Bedrock / Azure AI, Azure OpenAI / Vertex AI, Gemini API
 데이터 분석: Redshift / Synapse / BigQuery
+
+
+4. 코드 편집기
+IDLE 파이썬 기본 편집기
+PyCharm 파이썬 전용 통합개발환경
+VS Code 만능 코드편집기+확장프로그램 
+Anaconda + Jupyter Notebook 로컬서버 + 웹UI
+Google Colab 주피터 노트북을 구글 클라우드서버 +웹UI
+
+
+
+
+
