@@ -104,6 +104,8 @@ target="_blank"              #새탭에서 열기
           옵션 colspan 열합치기, rowspan 행합치기
 
 이미지태그 : <img> 
+<img src="./images/cat.jpg" alt="냐옹" title="고양이" > 상대경로로 불러올수도 http 경로를 줄수도있음
+title 은 사진에 마우스 오버하면 보이는 이름
 
 음악태그 : <audio>  /옵션 controls 재생바나옴 
 
@@ -111,7 +113,7 @@ target="_blank"              #새탭에서 열기
             <header, <nav>, <main>, <article>, <section>, <time>, <aside> 
 
 
-
+9. 
 
 
 
