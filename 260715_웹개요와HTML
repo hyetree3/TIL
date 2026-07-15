@@ -104,17 +104,17 @@ target="_blank"              #새탭에서 열기
           옵션 colspan 열합치기, rowspan 행합치기
 
 이미지태그 : <img> 
-<img src="./images/cat.jpg" alt="냐옹" title="고양이" > 상대경로로 불러올수도 http 경로를 줄수도있음
+<img src="./images/cat.jpg" alt="냐옹" title="고양이" >
+상대경로로 불러올수도 http 경로를 줄수도있음
 title 은 사진에 마우스 오버하면 보이는 이름
+width="30%" height="30%" 픽셀단위로도 쓸수있고, 화면의 %로 쓸수도 있음
 
-음악태그 : <audio>  /옵션 controls 재생바나옴 
+음악태그 : <audio>  /옵션 controls 재생바나옴 , autoplay 컨트롤바없이 자동샐행
 
 시맨틱태그 : 의미를 담은 이름달린 태그 , 주로 웹사이트 공간 분리용, HTML 5이후 나옴 
-            <header, <nav>, <main>, <article>, <section>, <time>, <aside> 
+            <header>, <nav>, <main>, <article>, <section>, <time>, <aside> 
 
-
-9. 
-
+<iframe> 다른 웹페이지 전체를 가져와서 박스 안에 보여주는 것.  유튜브 영상, 지도 
 
 
 
