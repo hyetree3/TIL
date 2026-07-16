@@ -75,12 +75,11 @@ app.js 의 CSS를 구성하는 건 app.CSS
 
 5. Github 배포준비
 package.json 수정
+"homepage" : https://hyetree3.github.io/TIL/game/
 
 
-
-
-
-
+# npm run build 
+build 폴더 이름 변경 > rock-paper-scissors-game
 
 
 
