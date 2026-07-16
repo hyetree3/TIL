@@ -41,13 +41,40 @@ FPS 1초 프레임
 
 교수님 정보 https://github.com/AISWSNP/AI_GM
 
-npm 
+node.js 설치 
+visual studio 
+Ctrl + ~ > 터미널창 오픈
+# npx create-react-app rock-paper-scissors-game 
+# npm start 
+
+localhost:3000 띄워짐 
+
+index.js 
+root.render(
+  <React.StrictMode>
+    <App />                           # app.js 를 참조한다 
+  </React.StrictMode>
+
+app.js 의 CSS를 구성하는 건 app.CSS
+
+[ 프롬프트] 
+티처블머신을 이용해서 React 에서 동작하는 가위바위보게임을 서비스하려고한다. 
+총 카테고리는 "가위" "바위" "보" "아무것도안냄" 으로 구성되어있다. 
+** 가위 바위 보 게임 요구사항 **
+
+1. 게임을 시작/ 종료 버튼을 가진다
+
+2. 컴퓨터랑 가위바위보 게임을 해서 누가 이겼는지 알려준다.
+3. 컴퓨터와의 전적을 항상 표시한다
+4. app을 종료하더라도 전적은 항상 기억된다. (databse 를 사용하지않음)
+5. 연승이나 연패를 하는 경우, 정보를 알려준다 ( 2연승! ) 
+6. 모든 코드와 CSS는 App.js , App.css 만 저장한다.  
+7. 사용자는 카메라를 이용해서 가위,바위,보를 낼 수 도 있고 사진올리기를 통해서 가위,바위,보를 낼 수도 있다.
+8. 화면 구성과 디자인은 웹앱으로 만든다.
 
 
-
-
-
-
+5. Github 배포준비
+package.json 수정
 
 
 
