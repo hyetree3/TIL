@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME</title>
+    <title>동물 GAME</title>
 </head>
 <body>
- <div>가위바위보</div>
+ <div>Teachable Machine Image Model</div>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
@@ -17,7 +17,7 @@
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
     // the link to your model provided by Teachable Machine export panel
-    const URL = "https://teachablemachine.withgoogle.com/models/NzqTzXp5a/";
+    const URL = "https://teachablemachine.withgoogle.com/models/0bJuPmVKC/";
 
     let model, webcam, labelContainer, maxPredictions;
 
@@ -35,7 +35,7 @@
 
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
@@ -65,7 +65,6 @@
         }
     }
 </script>
-
 
 </body>
 </html>
