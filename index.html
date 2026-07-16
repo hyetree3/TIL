@@ -32,7 +32,7 @@
             background-color: rgba(255, 255, 255, 0.85); /* 반투명 흰색으로 배경 그라데이션이 살짝 비치게 */
             backdrop-filter: blur(6px);
             width: 100%;               /* 좌우 꽉 차게 설정 */
-            padding: 20px;             /* 안쪽 여백 */
+            padding: 32px 20px;        /* 안쪽 여백을 위아래로 넉넉하게 확장 */
             box-sizing: border-box;    /* 패딩이 포함된 크기 계산 방식을 안전하게 통일 */
             display: flex;             /* 내부 요소를 배치하기 위해 flexbox 적용 */
             flex-direction: column;    /* 위에서 아래로 세로 배치 */
@@ -70,8 +70,8 @@
         /* 헤더 이동 메뉴 네비게이션 */
         .nav-menu {
             display: flex;             /* 메뉴 글자들을 가로로 나열 */
-            gap: 30px;                 /* 글자 메뉴 사이의 간격 */
-            margin-top: 15px;          /* 위쪽 프로필과 띄우기 위한 여백 */
+            gap: 36px;                 /* 글자 메뉴 사이의 간격을 넓힘 */
+            margin-top: 24px;          /* 위쪽 프로필과 띄우기 위한 여백을 넉넉하게 */
         }
 
         /* 메뉴 글자들의 링크 스타일 */
@@ -92,16 +92,16 @@
         .container {
             width: 90%;                /* 기본적으로 화면 너비의 90% 사용 */
             max-width: 750px;          /* 모니터가 아무리 커져도 최대 가로폭 750픽셀로 고정 */
-            margin: 40px 0;            /* 위아래 바깥 여백 40픽셀 */
+            margin: 60px 0;            /* 위아래 바깥 여백을 넉넉하게 확대 */
             display: flex;             /* 내부 카드들을 정렬하기 위해 사용 */
             flex-direction: column;    /* 카드들을 아래로 차례로 쌓음 */
-            gap: 30px;                 /* 카드들 간의 수직 간격 */
+            gap: 44px;                 /* 카드들 간의 수직 간격을 넓혀 답답함을 줄임 */
         }
 
         /* 섹션 카드 기본 공통 스타일 */
         .section-card {
             background-color: #ffffff; /* 배경 흰색 */
-            padding: 30px;             /* 카드 내부 사방 여백 30픽셀 */
+            padding: 44px 38px;        /* 카드 내부 여백을 상하좌우 넉넉하게 확대 */
             border-radius: 20px;       /* 모서리를 둥글둥글하게 깎음 */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 은은한 밑바닥 그림자 */
             border-left: 6px solid #b39ddb; /* 카드 왼쪽에만 포인트 세로선 배치 */
@@ -114,16 +114,20 @@
             font-size: 28px;           /* 제목 크기 */
             color: #673ab7;            /* 보라색 강조 */
             margin-top: 0;             /* 기본 위 여백 제거 */
-            margin-bottom: 15px;       /* 본문 글과의 여백 */
+            margin-bottom: 24px;       /* 본문 글과의 여백을 넉넉하게 */
             border-bottom: 2px dashed #ede7f6; /* 제목 하단에 아기자기한 점선 추가 */
-            padding-bottom: 10px;      /* 점선과 글씨 사이 간격 */
+            padding-bottom: 16px;      /* 점선과 글씨 사이 간격을 넓힘 */
         }
 
         /* 카드 안의 일반 본문 */
         .section-card p {
             font-size: 18px;           /* 본문 글꼴 크기 (일반 폰트에 맞춰 살짝 조정) */
-            line-height: 1.7;          /* 줄간격을 넓혀 읽기 편하게 만듦 */
-            margin: 0 0 10px 0;        /* 문단 사이 여백 */
+            line-height: 1.9;          /* 줄간격을 더 넓혀 읽기 편하게 만듦 */
+            margin: 0 0 18px 0;        /* 문단 사이 여백을 넉넉하게 확대 */
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;          /* 카드 맨 마지막 문단은 아래 여백 제거 */
         }
 
         /* [4] 취미 카드 정렬 (텍스트와 고양이를 가로로 나열) */
@@ -131,7 +135,7 @@
             display: flex;             /* 가로로 나란히 배치하기 위해 지정 */
             align-items: center;       /* 세로 가운데 정렬 */
             justify-content: space-between; /* 양 끝으로 공간 배분 */
-            gap: 20px;                 /* 텍스트와 이미지 사이의 간격 */
+            gap: 32px;                 /* 텍스트와 이미지 사이의 간격을 넓힘 */
         }
 
         /* 취미 글씨 구역 */
@@ -173,7 +177,7 @@
         /* [5] 반응형 미디어 쿼리 (스마트폰 크기 768px 이하 대응) */
         @media (max-width: 768px) {
             header {
-                padding: 15px 10px;    /* 모바일에서는 헤더 높이 축소 */
+                padding: 20px 14px;    /* 모바일에서는 헤더 높이 축소하되 여백은 유지 */
             }
             .profile-img {
                 width: 100px;          /* 프로필 사진을 모바일에 맞추어 아담하게 축소 */
@@ -181,10 +185,10 @@
             }
             .nav-menu a {
                 font-size: 18px;       /* 메뉴 글자 크기 축소 */
-                gap: 15px;             /* 메뉴 글자들끼리의 간격 좁힘 */
+                gap: 20px;             /* 메뉴 글자들끼리의 간격 좁힘 */
             }
             .section-card {
-                padding: 20px;         /* 카드의 여백을 살짝 축소해서 공간 확보 */
+                padding: 28px 22px;    /* 카드의 여백을 모바일에서도 넉넉히 유지 */
             }
             .section-card h2 {
                 font-size: 24px;       /* 모바일 맞춤 제목 크기 */
