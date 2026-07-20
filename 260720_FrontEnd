@@ -20,3 +20,13 @@ Extension 필수항목
 
 2. emmet 문법
 ! 입력후 tab : 기본코드 자동작성
+
+3. VS code <-> Github 연동
+- 레포지터리와 폴더 연동
+    # git config --global user.name "Your Name"
+    # git config --global user.email "you@example.com"
+- 템플릿 통해서 index.html 꾸미기 free html template 
+- favicon 만들기
+    favicon.io 또는 realfavicongenerator.net 같은 사이트 접속
+
+4. 검색 최적화 
