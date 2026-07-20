@@ -1,0 +1,22 @@
+1. VS code 설치
+Extension 필수항목
+- **Live Preview**
+    - VS Code 안에서 바로 웹페이지 미리보기가 뜸
+    - HTML 파일 열고 우측 상단 미리보기 아이콘 클릭하면 실행
+- **Live Server**
+    - 파일 저장할 때마다 브라우저가 자동 새로고침됨
+    - HTML 파일 우클릭 → "Open with Live Server" 선택
+
+
+- **indent-rainbow**
+    - 들여쓰기 단계마다 색을 다르게 표시해줘서 코드 depth 파악이 쉬워짐
+- **Auto Rename Tag**
+    - HTML 태그의 여는 태그를 고치면 닫는 태그가 자동으로 같이 바뀜
+- **Korean Language Pack**
+    - VS Code 메뉴/설정 화면을 한글로 바꿔줌
+    - 설치 후 우측 하단에 뜨는 "Change Language and Restart" 클릭해야 적용됨
+- **Prettier - Code formatter**
+    - 코드 자동 정렬(들여쓰기, 줄바꿈, 세미콜론 등)을 통일해주는 포맷터
+
+2. emmet 문법
+! 입력후 tab : 기본코드 자동작성
