@@ -29,4 +29,45 @@ Extension 필수항목
 - favicon 만들기
     favicon.io 또는 realfavicongenerator.net 같은 사이트 접속
 
-4. 검색 최적화 
+4. 검색 최적화 (SEO)
+- index.html 에 Robots.txt 검색엔진 허용 / 비허용 
+    대문 앞 표지판
+    안지켜도 상관없으나, 신사협정룰 
+- meta robots
+   세부 지침 <meta name="robots"content="noindex, nofollow"/>
+- Sitemap.xml
+검색엔진(Google, Naver 등)에게 사이트의 페이지 구조를 알려주는 XML 파일
+ 한글은 인코딩해서 주소에 넣어야함
+<loc>https://www.coupang.com/np/products/brand-shop?brandName=%EB%B9%99%EA%B7%B8%EB%A0%88</loc>
+
+5. HTML5
+문법이 틀려도 알아서 보여줌 -> 좋지만 안좋음. 미래를 위해 고쳐둘 것 (validator.w3.org) 
+
+html 
+- head
+    (사람이 보지 않는 영역)
+    metadata (페이지를 설명), title (브라우저 탭 제목), link(파비콘, 폰트.. ), script (경고창)
+- body
+    (사람이 보는 영역)
+
+밖으로 빼는 법 (별도 파일을 만들고 head 에 넣는다 
+css 는 <link rel="stylesheet" href="./css/style.css" >
+script 는 <script src="./js/OuterJavaScript.js"> </script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
